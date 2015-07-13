@@ -1,0 +1,305 @@
+﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace RoomGenerator
+{
+    //implementation for each type of item
+    //implements the inherited use function from item parent class
+    //each class simply implements the use function, 
+    //depending on what the item type is
+
+    public class PerseusHelm : Item
+    {
+        public PerseusHelm(Vector2 a_Position, Vector2 a_Dimensions, Texture2D a_Texture)
+            : base(a_Position, a_Dimensions, a_Texture, ItemType.PERSEUSHELM)
+        {
+
+        }
+
+        public override void Use()
+        {
+            Dungeon.GetPlayer.IncreaseAttackSpeed();
+            base.Use();
+        }
+    }
+
+    public class TarnHelm : Item
+    {
+        public TarnHelm(Vector2 a_Position, Vector2 a_Dimensions, Texture2D a_Texture)
+            : base(a_Position, a_Dimensions, a_Texture, ItemType.TARNHELM)
+        {
+
+        }
+
+        public override void Use()
+        {
+            Dungeon.GetPlayer.DecreaseMovementSpeed();
+            Dungeon.GetPlayer.IncreaseMaxHealth();
+            base.Use();
+        }
+    }
+
+    public class Svrivatsa : Item
+    {
+        public Svrivatsa(Vector2 a_Position, Vector2 a_Dimensions, Texture2D a_Texture)
+            : base(a_Position, a_Dimensions, a_Texture, ItemType.SVRIVATSA)
+        {
+
+        }
+
+        public override void Use()
+        {
+            Dungeon.GetPlayer.IncreaseAttackSpeed();
+            Dungeon.GetPlayer.DecreaseMaxHealth();
+            base.Use();
+        }
+    }
+
+    public class Priwen : Item
+    {
+        public Priwen(Vector2 a_Position, Vector2 a_Dimensions, Texture2D a_Texture)
+            : base(a_Position, a_Dimensions, a_Texture, ItemType.PRIWEN)
+        {
+
+        }
+
+        public override void Use()
+        {
+            Dungeon.GetPlayer.IncreaseMovementSpeed();
+            Dungeon.GetPlayer.IncreaseAttackSpeed();
+
+            base.Use();
+        }
+    }
+
+    public class HarvesterOfSouls : Item
+    {
+        public HarvesterOfSouls(Vector2 a_Position, Vector2 a_Dimensions, Texture2D a_Texture)
+            : base(a_Position, a_Dimensions, a_Texture, ItemType.HARVESTEROFSOULS)
+        {
+
+        }
+
+        public override void Use()
+        {
+            Dungeon.GetPlayer.IncreaseBulletSize();
+            Dungeon.GetPlayer.DecreaseAttackSpeed();
+            base.Use();
+        }
+    }
+
+    public class Chentu : Item
+    {
+        public Chentu(Vector2 a_Position, Vector2 a_Dimensions, Texture2D a_Texture)
+            : base(a_Position, a_Dimensions, a_Texture, ItemType.CHENTU)
+        {
+
+        }
+
+        public override void Use()
+        {
+            Dungeon.GetPlayer.IncreaseAttackDamage();
+            base.Use();
+        }
+    }
+
+    public class HeavensWill : Item
+    {
+        public HeavensWill(Vector2 a_Position, Vector2 a_Dimensions, Texture2D a_Texture)
+            : base(a_Position, a_Dimensions, a_Texture, ItemType.HEAVENSWILL)
+        {
+
+        }
+
+        public override void Use()
+        {
+            Dungeon.GetPlayer.IncreaseAttackDamage();
+            Dungeon.GetPlayer.IncreaseAttackDamage();
+            Dungeon.GetPlayer.DecreaseBulletSize();
+            Dungeon.GetPlayer.DecreaseBulletSize();
+            base.Use();
+        }
+    }
+
+    public class Caledfwlch : Item
+    {
+        public Caledfwlch(Vector2 a_Position, Vector2 a_Dimensions, Texture2D a_Texture)
+            : base(a_Position, a_Dimensions, a_Texture, ItemType.CALEDFWLCH)
+        {
+
+        }
+
+        public override void Use()
+        {
+            Dungeon.GetPlayer.IncreaseMovementSpeed();
+            Dungeon.GetPlayer.IncreaseMovementSpeed();
+            Dungeon.GetPlayer.DecreaseBulletSize();
+            Dungeon.GetPlayer.DecreaseMovementSpeed();
+            Dungeon.GetPlayer.DecreaseMaxHealth();
+            base.Use();
+        }
+    }
+
+    public class Arondight : Item
+    {
+        public Arondight(Vector2 a_Position, Vector2 a_Dimensions, Texture2D a_Texture)
+            : base(a_Position, a_Dimensions, a_Texture, ItemType.ARONDIGHT)
+        {
+
+        }
+
+        public override void Use()
+        {
+            Dungeon.GetPlayer.IncreaseAttackSpeed();
+            Dungeon.GetPlayer.IncreaseAttackDamage();
+            Dungeon.GetPlayer.DecreaseMaxHealth();
+
+            base.Use();
+        }
+    }
+
+    public class Mysteltainn : Item
+    {
+        public Mysteltainn(Vector2 a_Position, Vector2 a_Dimensions, Texture2D a_Texture)
+            : base(a_Position, a_Dimensions, a_Texture, ItemType.MYSTELTAINN)
+        {
+
+        }
+
+        public override void Use()
+        {
+            Dungeon.GetPlayer.IncreaseMovementSpeed();
+            Dungeon.GetPlayer.IncreaseAttackSpeed();
+            Dungeon.GetPlayer.DecreaseMaxHealth();
+
+            base.Use();
+        }
+    }
+
+    public class Gungnir : Item
+    {
+        public Gungnir(Vector2 a_Position, Vector2 a_Dimensions, Texture2D a_Texture)
+            : base(a_Position, a_Dimensions, a_Texture, ItemType.GUNGNIR)
+        {
+
+        }
+
+        public override void Use()
+        {
+            Dungeon.GetPlayer.IncreaseBulletSize();
+            Dungeon.GetPlayer.IncreaseBulletSize();
+            Dungeon.GetPlayer.DecreaseMovementSpeed();
+
+            base.Use();
+        }
+    }
+
+    public class SpearOfLonginus : Item
+    {
+        public SpearOfLonginus(Vector2 a_Position, Vector2 a_Dimensions, Texture2D a_Texture)
+            : base(a_Position, a_Dimensions, a_Texture, ItemType.SPEAROFLONGINUS)
+        {
+
+        }
+
+        public override void Use()
+        {
+            Dungeon.GetPlayer.IncreaseBulletSize();
+            Dungeon.GetPlayer.IncreaseBulletSize();
+            Dungeon.GetPlayer.DecreaseAttackSpeed();
+
+            base.Use();
+        }
+    }
+
+    public class Mjolnir : Item
+    {
+        public Mjolnir(Vector2 a_Position, Vector2 a_Dimensions, Texture2D a_Texture)
+            : base(a_Position, a_Dimensions, a_Texture, ItemType.MJOLNIR)
+        {
+
+        }
+
+        public override void Use()
+        {
+            Dungeon.GetPlayer.IncreaseBulletSize();
+            Dungeon.GetPlayer.IncreaseAttackDamage();
+            Dungeon.GetPlayer.DecreaseMovementSpeed();
+            Dungeon.GetPlayer.DecreaseMovementSpeed();
+
+            base.Use();
+        }
+    }
+
+    public class Vajra : Item
+    {
+        public Vajra(Vector2 a_Position, Vector2 a_Dimensions, Texture2D a_Texture)
+            : base(a_Position, a_Dimensions, a_Texture, ItemType.VAJRA)
+        {
+
+        }
+
+        public override void Use()
+        {
+            Dungeon.GetPlayer.IncreaseAttackDamage();
+
+            base.Use();
+        }
+    }
+
+    public class Megingjord : Item
+    {
+        public Megingjord(Vector2 a_Position, Vector2 a_Dimensions, Texture2D a_Texture)
+            : base(a_Position, a_Dimensions, a_Texture, ItemType.MEGINGJORD)
+        {
+
+        }
+
+        public override void Use()
+        {
+            Dungeon.GetPlayer.IncreaseAttackDamage();
+            Dungeon.GetPlayer.IncreaseAttackSpeed();
+            Dungeon.GetPlayer.DecreaseMovementSpeed();
+            Dungeon.GetPlayer.DecreaseMovementSpeed();
+            base.Use();
+        }
+    }
+
+    public class LotusTree : Item
+    {
+        public LotusTree(Vector2 a_Position, Vector2 a_Dimensions, Texture2D a_Texture)
+            : base(a_Position, a_Dimensions, a_Texture, ItemType.LOTUSTREE)
+        {
+
+        }
+
+        public override void Use()
+        {
+            Dungeon.GetPlayer.IncreaseMaxHealth();
+            Dungeon.GetPlayer.IncreaseMaxHealth();
+
+            base.Use();
+        }
+    }
+
+    public class Orichalcum : Item
+    {
+        public Orichalcum(Vector2 a_Position, Vector2 a_Dimensions, Texture2D a_Texture)
+            : base(a_Position, a_Dimensions, a_Texture, ItemType.ORICHALCUM)
+        {
+
+        }
+
+        public override void Use()
+        {
+            Dungeon.GetPlayer.IncreaseMaxHealth();
+            Dungeon.GetPlayer.DecreaseBulletSize();
+
+            base.Use();
+        }
+    }
+}
